@@ -14,53 +14,59 @@
 			font-size: 90%;
 			color: #444;
 			background: #ffe url(images/background-repeat.jpg);
-			background: #fff;
+			background: #fefefe;
 		}
 
 		#page {
-			width: 900px;
-			margin: 50px auto;
-			padding: 10px 10px;
-			background: url(images/thumb-monkey.jpg) center bottom no-repeat;
-			background-size: 100%;
-			min-height: 800px;
-
-			-webkit-box-shadow: 0px 0px 10px #000;
-			-moz-box-shadow: 10px 10px 5px #888;
-			box-shadow: 10px 10px 5px #888;
-		}
-		
-		#monkey {
-			background: url(images/thumb-monkey.jpg) 40% 30%;
-			background-size: 300%;
-			width: 200px;
-			height: 150px;
-			float: right;
-			margin-left: 20px;
 		}
 		
 		#site-title {
 			text-align: right;
-			color: #975;
+			color: #222;
 			margin: 0;
-			margin-bottom: 10px;
 			padding: 0;
 			font-size: 2.5em;
+			float: right;
+			padding-left: 40px;
+			padding-right: 20px;
+			padding-top: 10px;
+			font-weight: normal;
 		}
 		
 		#tagline {
 			text-align: right;
-			color: #a86;
+			color: #666;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		
+		#header {
+			-webkit-box-shadow: 10px 10px 20px #111;
+			z-index: 1000;
+			position: relative;
 		}
 		
 		#content {
-			margin-top: 40px;
+			-webkit-box-shadow: 0 -10px 20px #111;
 		}
 		
 		h2 {
 			text-align: center;
+			margin: 0;
+			padding: 10px;
 		}
 		
+		#kv-single-widget {
+			width: 100%;
+			height: 450px;
+			margin: 0 auto;
+			background: #222;
+		}
+		
+		#kv-carousel-widget {
+			width: 900px;
+			margin: 0 auto;
+		}
 	
 	</style>
 
@@ -72,17 +78,14 @@
 
 <div id="page">
 
-	<div id="monkey"></div>
-
-	<h1 id="site-title">Sign Monkey</h1>	
-	<div id="tagline">
-		An incomplete, badly signed, poor quality<br />
-		video dictionary of British Sign Language.
+	<div id="header">
+		<h1 id="site-title">Sign Monkey</h1>	
+		<div id="tagline">
+			An incomplete, badly signed, poor quality<br />
+			video dictionary of British Sign Language.
+		</div>
 	</div>
 	
-	
-	<div id="content">
-
 		<div id="kv-single-widget"></div>
 		<script type="text/javascript">
 		 KV.single('#kv-single-widget', {
@@ -91,6 +94,8 @@
 		  "guid": "31bb15b2-ea7c-0d62-7c69-0a3a83610367"
 		});
 		</script>
+
+	<div id="content">
 		
 		<h2>Basic signs</h2>
 		
