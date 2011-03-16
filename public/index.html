@@ -4,23 +4,48 @@
 
 	<style>
 	
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
 	
 		body {
 			font-family: Verdana, Tahoma, sans-serif;
 			font-size: 90%;
 			color: #444;
 			background: #ffe url(images/background-repeat.jpg);
+			background: #fff;
 		}
 
 		#page {
 			width: 900px;
-			margin: 0 auto;
-			padding: 30px 10px;
+			margin: 50px auto;
+			padding: 10px 10px;
+			background: url(images/thumb-monkey.jpg) center bottom no-repeat;
+			background-size: 100%;
+			min-height: 800px;
+
+			-webkit-box-shadow: 0px 0px 10px #000;
+			-moz-box-shadow: 10px 10px 5px #888;
+			box-shadow: 10px 10px 5px #888;
+		}
+		
+		#monkey {
+			background: url(images/thumb-monkey.jpg) 40% 30%;
+			background-size: 300%;
+			width: 200px;
+			height: 150px;
+			float: right;
+			margin-left: 20px;
 		}
 		
 		#site-title {
 			text-align: right;
 			color: #975;
+			margin: 0;
+			margin-bottom: 10px;
+			padding: 0;
+			font-size: 2.5em;
 		}
 		
 		#tagline {
@@ -46,6 +71,8 @@
 <body>
 
 <div id="page">
+
+	<div id="monkey"></div>
 
 	<h1 id="site-title">Sign Monkey</h1>	
 	<div id="tagline">
