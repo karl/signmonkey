@@ -1,1 +1,85 @@
-Hello, and welcome to sign monkey!
+<!DOCTYPE>
+<html>
+<head>
+
+	<style>
+	
+	
+		body {
+			font-family: Verdana, Tahoma, sans-serif;
+			font-size: 90%;
+			color: #444;
+			background: #ffe url(images/background-repeat.jpg);
+		}
+
+		#page {
+			width: 900px;
+			margin: 0 auto;
+			padding: 30px 10px;
+		}
+		
+		#site-title {
+			text-align: right;
+			color: #975;
+		}
+		
+		#tagline {
+			text-align: right;
+			color: #a86;
+		}
+		
+		#content {
+			margin-top: 40px;
+		}
+		
+		h2 {
+			text-align: center;
+		}
+		
+	
+	</style>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://dev.kuluvalley.com/widgets/1/application.js"></script>
+	
+</head>
+<body>
+
+<div id="page">
+
+	<h1 id="site-title">Sign Monkey</h1>	
+	<div id="tagline">
+		An incomplete, badly signed, poor quality<br />
+		video dictionary of British Sign Language.
+	</div>
+	
+	
+	<div id="content">
+
+		<div id="kv-single-widget"></div>
+		<script type="text/javascript">
+		 KV.single('#kv-single-widget', {
+		  "domain": "standard.kuluvalley.com",
+		  "feedUrl": "http://dev.kuluvalley.com/widgets/1/examples/standard/feed/json.php",
+		  "guid": "31bb15b2-ea7c-0d62-7c69-0a3a83610367"
+		});
+		</script>
+		
+		<h2>Basic signs</h2>
+		
+		<div id="kv-carousel-widget"></div>
+		<script type="text/javascript">
+		 KV.carousel('#kv-carousel-widget', {
+		  "domain": "standard.kuluvalley.com",
+		  "feedUrl": "http://dev.kuluvalley.com/widgets/1/examples/standard/feed/json.php",
+		  "guid": "31bb15b2-ea7c-0d62-7c69-0a3a83610367",
+			playInWidget: '#kv-single-widget'
+		});
+		</script>
+	
+	</div>
+	
+</div>	
+
+</body>
+</html>
