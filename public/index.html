@@ -2,118 +2,125 @@
 <html>
 <head>
 
-	<style>
-	
-		html, body {
-			margin: 0;
-			padding: 0;
-		}
-	
-		body {
-			font-family: Verdana, Tahoma, sans-serif;
-			font-size: 90%;
-			color: #444;
-			background: #ffe url(images/background-repeat.jpg);
-			background: #fefefe;
-		}
+  <style>
 
-		#page {
-		}
-		
-		#site-title {
-			text-align: right;
-			color: #222;
-			margin: 0;
-			padding: 0;
-			font-size: 2.5em;
-			float: right;
-			padding-left: 40px;
-			padding-right: 20px;
-			padding-top: 10px;
-			font-weight: normal;
-		}
-		
-		#tagline {
-			text-align: right;
-			color: #666;
-			padding-top: 20px;
-			padding-bottom: 20px;
-		}
-		
-		#header {
-			-webkit-box-shadow: 0px 5px 5px #111;
-			z-index: 1000;
-			position: relative;
-		}
-		
-		#content {
-			-webkit-box-shadow: 0 -5px 5px #111;
-			z-index: 1000;
-			position: relative;
-		}
-		
-		h2 {
-			text-align: center;
-			margin: 0;
-			padding: 10px;
-		}
-		
-		#kv-single-widget {
-			width: 100%;
-			height: 450px;
-			margin: 0 auto;
-			background: #222;
-		}
-		
-		#kv-carousel-widget {
-			width: 900px;
-			margin: 0 auto;
-		}
-	
-	</style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
 
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-	<script type="text/javascript" src="http://dev.kuluvalley.com/widgets/1/application.js"></script>
-	
+    body {
+      font-family: Verdana, Tahoma, sans-serif;
+      font-size: 90%;
+      color: #444;
+      background: #ffe url(images/background-repeat.jpg);
+      background: #fefefe;
+    }
+
+    #page {
+    }
+
+    #site-title {
+      text-align: right;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      font-size: 2.5em;
+      float: right;
+      padding-left: 40px;
+      padding-right: 20px;
+      padding-top: 10px;
+      font-weight: normal;
+    }
+
+    #tagline {
+      text-align: right;
+      color: #666;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    #header {
+      -webkit-box-shadow: 0px 5px 5px #111;
+      z-index: 1000;
+      position: relative;
+    }
+
+    #content {
+      -webkit-box-shadow: 0 -5px 5px #111;
+      z-index: 1000;
+      position: relative;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 0;
+      padding: 10px;
+    }
+
+    #player {
+      background: #222;
+    }
+
+    #kv-single-widget {
+      height: 450px;
+      width: 600px;
+      margin: 0 auto;
+    }
+
+    #kv-carousel-widget {
+      width: 900px;
+      margin: 0 auto;
+    }
+
+  </style>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="http://dev.kuluvalley.com/widgets/1/application.js"></script> -->
+
+  <script src="http://kelvin.kuluvalley.com/~karl/Widgets/API/1/application.js"></script>
+
 </head>
 <body>
 
 <div id="page">
 
-	<div id="header">
-		<h1 id="site-title">Sign Monkey</h1>	
-		<div id="tagline">
-			An incomplete, badly signed, poor quality<br />
-			video dictionary of British Sign Language.
-		</div>
-	</div>
-	
-		<div id="kv-single-widget"></div>
-		<script type="text/javascript">
-		 KV.single('#kv-single-widget', {
-		  "domain": "standard.kuluvalley.com",
-		  "feedUrl": "http://dev.kuluvalley.com/widgets/1/examples/standard/feed/json.php",
-		  "guid": "31bb15b2-ea7c-0d62-7c69-0a3a83610367"
-		});
-		</script>
+  <div id="header">
+    <h1 id="site-title">Sign Monkey</h1>
+    <div id="tagline">
+      An incomplete, badly signed, poor quality<br />
+      video dictionary of British Sign Language.
+    </div>
+  </div>
 
-	<div id="content">
-		
-		<h2>Basic signs</h2>
-		
-		<div id="kv-carousel-widget"></div>
-		<script type="text/javascript">
-		 KV.carousel('#kv-carousel-widget', {
-		  "domain": "standard.kuluvalley.com",
-		  "feedUrl": "http://dev.kuluvalley.com/widgets/1/examples/standard/feed/json.php",
-		  "guid": "31bb15b2-ea7c-0d62-7c69-0a3a83610367",
-			playInWidget: '#kv-single-widget'
-		});
-		</script>
-	
-	</div>
-	
-</div>	
+  <div id="player">
+    <div id="kv-single-widget"></div>
+    <script type="text/javascript">
+     KV.single('#kv-single-widget', {
+      "domain": "standard.kuluvalley.com",
+      "feedUrl": "http://dev.kuluvalley.com/widgets/1/examples/standard/feed/json.php",
+      "guid": "31bb15b2-ea7c-0d62-7c69-0a3a83610367"
+    });
+    </script>
+  </div>
+
+  <div id="content">
+
+    <h2>Basic signs</h2>
+
+    <div id="kv-carousel-widget"></div>
+    <script type="text/javascript">
+     KV.carousel('#kv-carousel-widget', {
+      "domain": "standard.kuluvalley.com",
+      "feedUrl": "http://dev.kuluvalley.com/widgets/1/examples/standard/feed/json.php",
+      "guid": "31bb15b2-ea7c-0d62-7c69-0a3a83610367",
+      playInWidget: '#kv-single-widget'
+    });
+    </script>
+
+  </div>
+
+</div>
 
 </body>
 </html>
