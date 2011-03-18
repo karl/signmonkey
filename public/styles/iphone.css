@@ -1,0 +1,23 @@
+
+#site-title {
+  text-align: center;
+  padding: 5px;
+  float: none;
+}
+
+#tagline {
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 10px;
+  font-size: 70%;
+  float: none;
+}
+
+#kv-single-widget {
+  height: 240px;
+  width: 100%;
+}
+
+#kv-multi-widget {
+  width: 100%;
+}
