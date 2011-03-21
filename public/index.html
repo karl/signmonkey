@@ -139,6 +139,13 @@
         }
       });
 
+      $('.kv-vertical-presentation').live('click', function() {
+        var name = $('.kv-vertical-title', this).text();
+        var guid = $(this).attr('guid');
+
+        _gaq.push(['_trackEvent', 'Videos', 'Play', name + " (" + guid + ")"]);
+      });
+
     </script>
 
   </div>
