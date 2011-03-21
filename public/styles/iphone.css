@@ -9,6 +9,10 @@
     padding: 0;
 }
 
+#tabs {
+    width: 100%;
+}
+
 #tagline {
   text-align: center;
   padding-top: 0;
@@ -19,9 +23,5 @@
 
 #kv-single-widget {
   height: 240px;
-  width: 100%;
-}
-
-#kv-multi-widget {
   width: 100%;
 }

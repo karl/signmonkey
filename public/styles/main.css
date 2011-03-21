@@ -48,6 +48,11 @@ body {
   padding: 20px;
 }
 
+#tabs {
+    margin: 0 auto;
+    width: 900px;
+}
+
 h2 {
   text-align: center;
   margin: 0;
@@ -61,10 +66,5 @@ h2 {
 #kv-single-widget {
   height: 450px;
   width: 600px;
-  margin: 0 auto;
-}
-
-#kv-multi-widget {
-  width: 900px;
   margin: 0 auto;
 }
