@@ -5,6 +5,10 @@
   float: none;
 }
 
+#content {
+    padding: 0;
+}
+
 #tagline {
   text-align: center;
   padding-top: 0;

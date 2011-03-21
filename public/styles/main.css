@@ -45,6 +45,7 @@ body {
   -webkit-box-shadow: 0 -5px 5px #111;
   z-index: 1000;
   position: relative;
+  padding: 20px;
 }
 
 h2 {
