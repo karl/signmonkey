@@ -14,8 +14,10 @@
   <meta name="viewport" content="initial-scale=1.0" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script src="scripts/jquery.cookie.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
-  <script src="http://dev.kuluvalley.com/widgets/1/application.js"></script>
+  <!-- // <script src="http://dev.kuluvalley.com/widgets/1/application.js"></script> -->
+  <script src="http://kelvin.kuluvalley.com/~karl/widgets/api/1/application.js"></script>
 
 </head>
 <body>
@@ -31,10 +33,8 @@
   </div>
 
   <script type="text/javascript">
-    var func = KV.carousel;
     var size = 1000;
     if ($('#page').width() <= 320) {
-      func = KV.vertical;
       size = 5;
     }
   </script>
@@ -54,32 +54,74 @@
     <div id="tabs">
       <ul>
           <li><a href="#tab-all">All</a></li>
-          <li><a href="#tab-basics">Basics</a></li>
+          <li><a href="#tab-101-vocab">101 Vocab</a></li>
+          <li><a href="#tab-time-calendar">Time &amp; Calendar</a></li>
+          <li><a href="#tab-day-of-week">Days of the week</a></li>
       </ul>
       <div id="tab-all">
         <script>
-          func({
+          KV.vertical({
             domain: "signmonkey.kuluvalley.com",
             guid: "22F7E642-EC19-F60C-6B61-E22ED2124B32",
             playInWidget: '#kv-single-widget',
-            size: size
+            size: size,
+            sortField: 'title',
+            sortDirection: 'asc',
+            search: true
           });
         </script>
       </div>
-      <div id="tab-basics">
+      <div id="tab-101-vocab">
         <script>
-          func({
+          KV.vertical({
             domain: "signmonkey.kuluvalley.com",
             guid: "b2734940-698e-13d4-3298-0507be389870",
             playInWidget: '#kv-single-widget',
-            size: size
+            size: size,
+            sortField: 'title',
+            sortDirection: 'asc',
+            search: true
+          });
+        </script>
+      </div>
+      <div id="tab-time-calendar">
+        <script>
+          KV.vertical({
+            domain: "signmonkey.kuluvalley.com",
+            guid: "134b2668-af02-6d7d-6f69-3d927c14c644",
+            playInWidget: '#kv-single-widget',
+            size: size,
+            sortField: 'title',
+            sortDirection: 'asc',
+            search: true
+          });
+        </script>
+      </div>
+      <div id="tab-day-of-week">
+        <script>
+          KV.vertical({
+            domain: "signmonkey.kuluvalley.com",
+            guid: "68303ce0-bb5d-36e2-97e0-80fe89f2abee",
+            playInWidget: '#kv-single-widget',
+            size: size,
+            sortField: 'title',
+            sortDirection: 'asc',
+            search: true
           });
         </script>
       </div>
     </div>
 
+
+
+
     <script>
-      $( "#tabs" ).tabs();
+      $("#tabs").tabs({
+        cookie: {
+          expires: 30
+        }
+      });
+
     </script>
 
   </div>
