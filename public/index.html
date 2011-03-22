@@ -171,7 +171,7 @@
       });
 
       $('.kv-search input').live('focus', function() {
-        $('body').animate({ scrollTop: $(this).offset().top - 70 }, 200);
+        $('html, body').animate({ scrollTop: $(this).offset().top - 70 }, 200);
       })
 
       $('.kv-vertical-presentation').live('click', function() {
