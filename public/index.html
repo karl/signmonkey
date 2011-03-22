@@ -60,10 +60,14 @@
       sortField: 'title',
       sortDirection: 'asc',
       search: true,
-			searchFields: [
-				'title',
-				'alternateWords'
-			]
+      listInfo: [
+        'title',
+        'alternateWords'
+      ],
+      searchFields: [
+        'title',
+        'alternateWords'
+      ]
     }
   </script>
 
@@ -84,6 +88,7 @@
           <li><a href="#tab-all">All</a></li>
           <li><a href="#tab-101-vocab">101 Vocab</a></li>
 
+          <li><a href="#tab-numbers">Numbers</a></li>
           <li><a href="#tab-time-calendar">Time &amp; Calendar</a></li>
           <li><a href="#tab-day-of-week">Days of the week</a></li>
 
@@ -102,6 +107,13 @@
         <script>
           KV.vertical($.extend({}, defaultConfig, {
             guid: "b2734940-698e-13d4-3298-0507be389870"
+          }));
+        </script>
+      </div>
+      <div id="tab-numbers">
+        <script>
+          KV.vertical($.extend({}, defaultConfig, {
+            guid: "84cccdc3-b113-a326-62a5-0cbf75d58ef2"
           }));
         </script>
       </div>
@@ -142,12 +154,12 @@
       </div>
     </div>
 
-		<div id="footer">
-			Made by <a href="http://monket.net/">Karl O'Keeffe</a>. 
-			Videos powered by <a href="http://www.kuluvalley.com/">Kulu Valley</a>. 
-			No monkeys were harmed in the making of this website.
-		</div>
-		
+    <div id="footer">
+      Made by <a href="http://monket.net/">Karl O'Keeffe</a>.
+      Videos powered by <a href="http://www.kuluvalley.com/">Kulu Valley</a>.
+      No monkeys were harmed in the making of this website.
+    </div>
+
 
     <script>
       $("#tabs").tabs({
@@ -156,9 +168,9 @@
         }
       });
 
-			$('.kv-search input').live('focus', function() {
-				$('body').animate({ scrollTop: $(this).offset().top - 70 }, 200);
-			})
+      $('.kv-search input').live('focus', function() {
+        $('body').animate({ scrollTop: $(this).offset().top - 70 }, 200);
+      })
 
       $('.kv-vertical-presentation').live('click', function() {
         var name = $('.kv-vertical-title', this).text();

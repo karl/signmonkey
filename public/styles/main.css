@@ -90,3 +90,24 @@ h2 {
 .ui-tabs .ui-tabs-panel {
   background: white;
 }
+
+.kv-vertical-info {
+    font-size: 0.8em;
+    color: #888;
+}
+
+.kv-vertical-info .kv-vertical-title {
+    font-size: 1.3em;
+    color: #444;
+}
+
+
+
+
+
+
+
+
+
+
+
