@@ -49,6 +49,17 @@ body {
   padding: 20px;
 }
 
+#footer {
+  margin-top: 600px;
+  color: #ccc;
+  text-align: center;
+  font-size: 0.7em;
+}
+
+#footer a {
+  color: #bbb;
+}
+
 #tabs {
     margin: 0 auto;
     width: 900px;
