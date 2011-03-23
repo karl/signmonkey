@@ -60,12 +60,10 @@
     </div>
 
     <!--[if IE]>
-    <div id="error" class="message ui-state-error ui-corner-all">
+    <div id="ie-working-message" class="message ui-state-highlight ui-corner-all">
       <div class="close-button"><span class="ui-icon ui-icon-closethick">close</span></div>
       <p>
-        Unfortunately Sign Monkey doesn't work on Internet Explorer yet :(
-        Chief monkey is working on fixing this, but until then
-        please try it in another browser such as <a href="http://www.google.com/chrome/">Google Chrome</a>, <a href="http://www.apple.com/safari/">Safari</a>, or <a href="http://www.mozilla.com/">Firefox</a>.
+        Sign Monkey now works in Internet Explorer! Bananas for all!
       </p>
     </div>
     <![endif]-->
@@ -76,8 +74,8 @@
         $('#message').hide();
       }
 
-      if ($.cookie('error')) {
-        $('#error').hide();
+      if ($.cookie('ie-working-message')) {
+        $('#ie-working-message').hide();
       }
 
       $('.close-button').click(function() {
@@ -90,15 +88,9 @@
   </div>
 
   <script type="text/javascript">
-    var size = 1000;
-    // if ($('#page').width() <= 320) {
-    //   size = 5;
-    // }
-
     var defaultConfig = {
       domain: "signmonkey.kuluvalley.com",
       playInWidget: '#kv-single-widget',
-      size: size,
       sortField: 'title',
       sortDirection: 'asc',
       search: true,
@@ -197,9 +189,14 @@
     </div>
 
     <div id="footer">
-      Made by <a href="http://monket.net/">Karl O'Keeffe</a>.
-      Videos powered by <a href="http://www.kuluvalley.com/">Kulu Valley</a>.
-      No monkeys were harmed in the making of this website.
+      <p>
+        Spotted an error or want to help out? Contact me at <a href="mailto:signmonkey@monket.net">signmonkey@monket.net</a>
+      </p>
+      <p>
+        Made by <a href="http://monket.net/">Karl O'Keeffe</a>.
+        Videos powered by <a href="http://www.kuluvalley.com/">Kulu Valley</a>.
+        No monkeys were harmed in the making of this website.
+      </p>
     </div>
 
 
