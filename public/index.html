@@ -47,6 +47,29 @@
       An incomplete, badly signed, low quality<br />
       video dictionary of British Sign Language.
     </div>
+
+    <div id="message" class="ui-state-highlight ui-corner-all">
+      <div class="close-button"><span class="ui-icon ui-icon-closethick">close</span></div>
+      <p>Hello Mary Warders!</p>
+      <p>
+        Sign Monkey is just a baby monkey at the moment, many signs are missing
+        and a number of signs already on here are probably incorrect.
+        If you do spot any errors, or want to help improve thing please let me
+        know at <a href="mailto:signmonkey@monket.net">signmonkey@monket.net</a>
+        </p>
+    </div>
+    <script>
+      if ($.cookie('message')) {
+        $('#message').hide();
+      }
+
+      $('.close-button').click(function() {
+        var message = $(this).parent();
+        message.slideUp();
+        $.cookie(message.attr('id'), 'closed');
+      });
+    </script>
+    <div class="clear" style="height: 1px"></div>
   </div>
 
   <script type="text/javascript">
