@@ -48,7 +48,7 @@
       video dictionary of British Sign Language.
     </div>
 
-    <div id="message" class="ui-state-highlight ui-corner-all">
+    <div id="message" class="message ui-state-highlight ui-corner-all">
       <div class="close-button"><span class="ui-icon ui-icon-closethick">close</span></div>
       <p>Hello Mary Warders!</p>
       <p>
@@ -58,9 +58,26 @@
         know at <a href="mailto:signmonkey@monket.net">signmonkey@monket.net</a>
         </p>
     </div>
+
+    <!--[if IE]>
+    <div id="error" class="message ui-state-error ui-corner-all">
+      <div class="close-button"><span class="ui-icon ui-icon-closethick">close</span></div>
+      <p>
+        Unfortunately Sign Monkey doesn't work on Internet Explorer yet :( 
+        Chief monkey is working on fixing this, but until then
+        please try it in another browser such as <a href="http://www.google.com/chrome/">Google Chrome</a>, <a href="http://www.apple.com/safari/">Safari</a>, or <a href="http://www.mozilla.com/">Firefox</a>.
+      </p>
+    </div>
+    <![endif]-->
+
     <script>
+
       if ($.cookie('message')) {
         $('#message').hide();
+      }
+
+      if ($.cookie('error')) {
+        $('#error').hide();
       }
 
       $('.close-button').click(function() {
