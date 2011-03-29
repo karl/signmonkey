@@ -59,15 +59,6 @@
         </p>
     </div>
 
-    <!--[if IE]>
-    <div id="ie-working-message" class="message ui-state-highlight ui-corner-all">
-      <div class="close-button"><span class="ui-icon ui-icon-closethick">close</span></div>
-      <p>
-        Sign Monkey now works in Internet Explorer! Bananas for all!
-      </p>
-    </div>
-    <![endif]-->
-
     <script>
 
       if ($.cookie('message')) {
@@ -121,6 +112,7 @@
       <ul>
           <li><a href="#tab-all">All</a></li>
           <li><a href="#tab-alphabet">Alphabet</a></li>
+          <li><a href="#tab-basics">Basics</a></li>
           <li><a href="#tab-101-vocab">101 Vocab</a></li>
 
           <li><a href="#tab-numbers">Numbers</a></li>
@@ -143,6 +135,13 @@
         <script>
           KV.vertical($.extend({}, defaultConfig, {
             guid: "08b14214-e558-1fc1-5383-662d4402563a"
+          }));
+        </script>
+      </div>
+      <div id="tab-basics">
+        <script>
+          KV.vertical($.extend({}, defaultConfig, {
+            guid: "4dc00198-22ef-16bf-3cbe-6a75e9070200"
           }));
         </script>
       </div>
