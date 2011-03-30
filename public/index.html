@@ -66,51 +66,51 @@
         'title',
         'alternateWords'
       ],
-			height: 592
+      height: 592
     }
 
-		configs = {
-    	'latest': {
+    configs = {
+      'latest': {
         guid: "22F7E642-EC19-F60C-6B61-E22ED2124B32",
-				sortField: 'publishedDate',
-				sortDirection: 'desc',
-				size: 10
+        sortField: 'publishedDate',
+        sortDirection: 'desc',
+        size: 10
       },
- 			'all': {
+      'all': {
         guid: "22F7E642-EC19-F60C-6B61-E22ED2124B32"
       },
- 			'alphabet': {
+      'alphabet': {
         guid: "08b14214-e558-1fc1-5383-662d4402563a"
       },
- 			'basics': {
+      'basics': {
         guid: "4dc00198-22ef-16bf-3cbe-6a75e9070200"
       },
- 			'101-vocab': {
+      '101-vocab': {
         guid: "b2734940-698e-13d4-3298-0507be389870"
       },
- 			'numbers': {
+      'numbers': {
         guid: "84cccdc3-b113-a326-62a5-0cbf75d58ef2"
       },
- 			'time-calendar': {
+      'time-calendar': {
         guid: "134b2668-af02-6d7d-6f69-3d927c14c644"
       },
- 			'day-of-week': {
+      'day-of-week': {
         guid: "68303ce0-bb5d-36e2-97e0-80fe89f2abee"
-      }, 
-			'size': {
+      },
+      'size': {
         guid: "f4d73300-a799-4adf-c387-114c0c74c1bd"
-      }, 
-			'food-drink': {
+      },
+      'food-drink': {
         guid: "19ba8a07-3be1-3027-12a8-cc6ed554fadc"
-      }, 
-			'money': {
+      },
+      'money': {
         guid: "97420cee-44e2-560d-06f5-9cd4f73d4e97"
-      }, 
-			'home': {
+      },
+      'home': {
         guid: "9b656ae5-8433-8344-4612-f0fc6f64e1ba"
       }
-		};
-		
+    };
+
   </script>
 
   <div id="player">
@@ -127,7 +127,7 @@
 
     <div id="tabs">
       <ul>
-        	<li><a href="#tab-latest">Latest</a></li>
+          <li><a href="#tab-latest">Latest</a></li>
 
           <li><a href="#tab-all">All</a></li>
           <li><a href="#tab-alphabet">Alphabet</a></li>
@@ -188,16 +188,30 @@
         cookie: {
           expires: 30
         },
-				show: function(event, ui) {
-					if ($(ui.panel).hasClass('loaded')) {
-						return;
-					}
-					
-					var playlist = ui.panel.id.substring(4);
-					KV.vertical($(ui.panel), $.extend({}, defaultConfig, configs[playlist]));
-					
-					$(ui.panel).addClass('loaded');
-				}
+        show: function(event, ui) {
+          if ($(ui.panel).hasClass('loaded')) {
+            return;
+          }
+
+          var playlist = ui.panel.id.substring(4);
+          widget = KV.vertical($(ui.panel), $.extend({}, defaultConfig, configs[playlist]));
+
+          if (window.location.search.indexOf('admin') !== -1) {
+            widget.bind('renderPresentation', function(event, element, presentation) {
+              var url = 'http://signmonkey.kuluvalley.com/secure/creator.html?pguid=' + presentation.guid;
+              var manageButton = $('<a target="_blank" href="' + url + '" class="edit-link">edit</a>');
+              manageButton.click(function(event) {
+                window.open(url, 'kvcreator', 'width=1075,height=832');
+                event.preventDefault();
+                event.stopPropagation();
+              });
+
+              element.append(manageButton);
+            });
+          }
+
+          $(ui.panel).addClass('loaded');
+        }
       });
 
       $('.kv-vertical-presentation').live('click', function() {

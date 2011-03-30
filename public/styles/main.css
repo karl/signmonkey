@@ -143,6 +143,17 @@ h2 {
     margin-right: -15px;
 }
 
+.edit-link {
+    display: none;
+    float: right;
+    margin-top: -15px;
+    font-size: 0.7em;
+}
+
+.kv-vertical-presentation:hover .edit-link {
+    display: block;
+}
+
 
 
 
