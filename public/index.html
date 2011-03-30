@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="styles/Aristo/jquery-ui-1.8.7.custom.css">
 
   <link rel="stylesheet" media="all" href="styles/main.css">
-  <link rel="stylesheet" media="all and (max-device-width: 480px)" href="styles/iphone.css">
-  <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="styles/ipad-portrait.css">
-<!--  <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" href="styles/ipad-landscape.css">  -->
+  <!-- <link rel="stylesheet" media="all and (max-device-width: 480px)" href="styles/iphone.css"> -->
+  <!-- <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="styles/ipad-portrait.css"> -->
+  <!-- <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" href="styles/ipad-landscape.css">  -->
 
 
   <meta name="viewport" content="initial-scale=1.0" />
@@ -48,33 +48,6 @@
       video dictionary of British Sign Language.
     </div>
 
-    <!-- <div id="message" class="message ui-state-highlight ui-corner-all">
-      <div class="close-button"><span class="ui-icon ui-icon-closethick">close</span></div>
-      <p>Hello Mary Warders!</p>
-      <p>
-        Sign Monkey is just a baby monkey at the moment, many signs are missing
-        and a number of signs already on here are probably incorrect.
-        If you do spot any errors, or want to help improve things please let me
-        know at <a href="mailto:signmonkey@monket.net">signmonkey@monket.net</a>
-        </p>
-    </div>
-
-    <script>
-
-      if ($.cookie('message')) {
-        $('#message').hide();
-      }
-
-      if ($.cookie('ie-working-message')) {
-        $('#ie-working-message').hide();
-      }
-
-      $('.close-button').click(function() {
-        var message = $(this).parent();
-        message.slideUp();
-        $.cookie(message.attr('id'), 'closed');
-      });
-    </script> -->
     <div class="clear" style="height: 1px"></div>
   </div>
 
@@ -92,7 +65,8 @@
       searchFields: [
         'title',
         'alternateWords'
-      ]
+      ],
+			height: 592
     }
 
 		configs = {
@@ -195,16 +169,18 @@
       </div>
     </div>
 
-    <div id="footer">
-      <p>
-        Spotted an error or want to help out? Contact me at <a href="mailto:signmonkey@monket.net">signmonkey@monket.net</a>
-      </p>
-      <p>
-        Made by <a href="http://monket.net/">Karl O'Keeffe</a>.
-        Videos powered by <a href="http://www.kuluvalley.com/">Kulu Valley</a>.
-        No monkeys were harmed in the making of this website.
-      </p>
-    </div>
+  </div>
+
+   <div id="footer">
+     <p>
+       Spotted an error or want to help out? Contact me at <a href="mailto:signmonkey@monket.net">signmonkey@monket.net</a>
+     </p>
+     <p>
+       Made by <a href="http://monket.net/">Karl O'Keeffe</a>.
+       Videos powered by <a href="http://www.kuluvalley.com/">Kulu Valley</a>.
+       No monkeys were harmed in the making of this website.
+     </p>
+   </div>
 
 
     <script>
@@ -224,10 +200,6 @@
 				}
       });
 
-      $('.kv-search input').live('focus', function() {
-        $('html, body').animate({ scrollTop: $(this).offset().top - 70 }, 200);
-      })
-
       $('.kv-vertical-presentation').live('click', function() {
         var name = $('.kv-vertical-title', this).text();
         var guid = $(this).attr('guid');
@@ -236,8 +208,6 @@
       });
 
     </script>
-
-  </div>
 
 </div>
 
