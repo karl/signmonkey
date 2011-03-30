@@ -9,6 +9,7 @@ body {
   font-size: 90%;
   color: #444;
   background: #222 url(../images/slate-background.jpg);
+  height: 100%;
 }
 
 #page {
@@ -17,6 +18,7 @@ body {
   width: 940px;
   padding: 0 10px;
   margin: 0 auto;
+  min-height: 100%;
 }
 
 #site-title {
@@ -75,6 +77,8 @@ body {
 
 #tabs .ui-tabs-nav li {
   -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   border: 1px solid #B6B6B6 !important;
   padding: 1px;
   padding-bottom: 0px;
@@ -87,7 +91,7 @@ body {
 }
 
 #tabs .ui-widget-content {
-  border: none;
+  border: 1px solid #eee;
 }
 
 h2 {
@@ -103,6 +107,10 @@ h2 {
 
 #kv-single-widget {
   padding-top: 20px;
+}
+
+.kv-player {
+  border: 1px solid #eee;
 }
 
 .ui-tabs.ui-widget-content {
