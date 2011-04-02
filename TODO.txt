@@ -2,18 +2,6 @@ start
 finish
 forget
 
-january
-february
-march
-april
-may
-june
-july
-august
-september
-october
-november
-december
 
 weather
 
@@ -36,3 +24,5 @@ more 101-vocab
 clothes
 
 phrases for 101
+
+Welcome message
