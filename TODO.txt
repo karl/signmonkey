@@ -3,8 +3,6 @@ finish
 forget
 
 
-weather
-
 colours
 
 questions
