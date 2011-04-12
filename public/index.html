@@ -115,6 +115,9 @@
         sortField: 'publishedDate',
         sortDirection: 'desc'
       },
+      'colours': {
+        guid: "3db9efa6-6e91-b8fe-f6b5-c25c21e70c1a"
+      },
       'questions': {
         guid: "a9fc3880-f538-bfdb-58c1-718231457ee6"
       },
@@ -164,6 +167,7 @@
           <li><a href="#tab-months">Months</a></li>
           <li><a href="#tab-weather">Weather</a></li>
           <li><a href="#tab-season">Seasons</a></li>
+          <li><a href="#tab-colours">Colours</a></li>
 
           <li><a href="#tab-questions">Questions</a></li>
 
@@ -186,6 +190,7 @@
       <div id="tab-months"></div>
       <div id="tab-weather"></div>
       <div id="tab-season"></div>
+      <div id="tab-colours"></div>
       <div id="tab-questions"></div>
       <div id="tab-101-vocab"></div>
       <div id="tab-size"></div>
@@ -234,6 +239,19 @@
               element.append(manageButton);
             });
           }
+
+          widget.bind('renderPresentation', function(event, element, presentation) {
+            var tags = $('<ul class="tags"></ul>');
+
+            var tag_words = presentation.tags.split(' ');
+            for (var i = 0; i < tag_words.length; i++) {
+              var tag = tag_words[i];
+              tags.append($('<li>' + tag + '</li>'));
+            }
+
+            $('.kv-vertical-info', element).append(tags);
+          });
+
 
           $(ui.panel).addClass('loaded');
         }
