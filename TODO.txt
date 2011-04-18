@@ -15,11 +15,6 @@ start
 finish
 forget
 
-
-questions
-
-directions
-
 transport
 
 animals
