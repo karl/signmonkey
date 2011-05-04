@@ -254,10 +254,12 @@
             var tags = $('<ul class="tags"></ul>');
 
             var tag_words = presentation.tags.split(' ');
-            for (var i = 0; i < tag_words.length; i++) {
-              var tag = tag_words[i];
-              tags.append($('<li>' + tag + '</li>'));
-            }
+						$.each(tag_words, function(index, tag) {
+							var tag_element = $('<li>' + tag + '</li>').click(function() {
+								$("#tabs").tabs('select', 'tab-' + tag);
+							});
+              tags.append(tag_element);
+						});
 
             $('.kv-vertical-info', element).append(tags);
           });
