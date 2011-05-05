@@ -144,6 +144,9 @@
       },
       'school-and-work': {
         guid: "3455939b-2e6f-7125-4664-fcdf6c739f8d"
+      },
+      'shops': {
+        guid: "507a9408-5c1f-e6fb-affd-e6c919573800"
       }
     };
 
@@ -187,6 +190,7 @@
           <li><a href="#tab-money">Money</a></li>
           <li><a href="#tab-home">Home</a></li>
           <li><a href="#tab-school-and-work">School &amp; Work</a></li>
+          <li><a href="#tab-shops">Shops</a></li>
       </ul>
       <div id="tab-latest"></div>
       <div id="tab-all"></div>
@@ -209,6 +213,7 @@
       <div id="tab-money"></div>
       <div id="tab-home"></div>
       <div id="tab-school-and-work"></div>
+      <div id="tab-shops"></div>
     </div>
 
   </div>
@@ -259,12 +264,12 @@
             var tags = $('<ul class="tags"></ul>');
 
             var tag_words = presentation.tags.split(' ');
-						$.each(tag_words, function(index, tag) {
-							var tag_element = $('<li>' + tag + '</li>').click(function() {
-								$("#tabs").tabs('select', 'tab-' + tag);
-							});
+            $.each(tag_words, function(index, tag) {
+              var tag_element = $('<li>' + tag + '</li>').click(function() {
+                $("#tabs").tabs('select', 'tab-' + tag);
+              });
               tags.append(tag_element);
-						});
+            });
 
             $('.kv-vertical-info', element).append(tags);
           });
