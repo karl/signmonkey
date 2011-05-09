@@ -3,7 +3,6 @@ Code
 
 * Feedback button (going to normal KV feedback).
 * Paging vertical / only load thumbnails when they are in view.
-* Show tags in the vertical widget (maybe, this doesn't seem to be working well).
 
 
 
