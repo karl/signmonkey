@@ -1,16 +1,12 @@
+#page {
+  width: 100%;
+  padding: 0;
+}
 
 #site-title {
   text-align: center;
-  padding: 5px;
+  padding: 5px 5px 2px 5px;
   float: none;
-}
-
-#content {
-    padding: 0;
-}
-
-#tabs {
-    width: 100%;
 }
 
 #tagline {
@@ -21,7 +17,31 @@
   float: none;
 }
 
+#content {
+    float: none;
+    width: 100%;
+}
+
+#tabs {
+  padding: 0 2px;
+}
+
+#player {
+  float: none;
+  width: 320px;
+  margin: 0 auto;
+}
+
 #kv-single-widget {
-  height: 240px;
-  width: 100%;
+  padding: 0;
+}
+
+.kv-player {
+  border-left: none;
+  border-right: none;
+}
+
+.kv-vertical-presentation .edit-link,
+.kv-vertical-presentation .tags {
+  display: block;
 }
