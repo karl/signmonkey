@@ -8,8 +8,9 @@
 
   <link rel="stylesheet" media="all" href="styles/main.css">
   <link rel="stylesheet" media="all and (max-device-width: 480px)" href="styles/iphone.css">
-  <!-- <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="styles/ipad-portrait.css"> -->
-  <!-- <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" href="styles/ipad-landscape.css">  -->
+  <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px)" href="styles/ipad.css">
+  <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="styles/ipad-portrait.css">
+  <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" href="styles/ipad-landscape.css"> 
 
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,7 +40,7 @@
 </head>
 <body>
 
-<div id="page">
+<div id="page"><div id="page-inner">
 
   <div id="header">
     <h1 id="site-title">Sign Monkey</h1>
@@ -68,8 +69,7 @@
       searchFields: [
         'title',
         'alternateWords'
-      ],
-      height: 592
+      ]
     }
 
     configs = {
@@ -268,13 +268,16 @@
           widget.bind('renderPresentation', function(event, element, presentation) {
             var tags = $('<ul class="tags"></ul>');
 
-            var tag_words = presentation.tags.split(' ');
-            $.each(tag_words, function(index, tag) {
-              var tag_element = $('<li>' + tag + '</li>').click(function() {
-                $("#tabs").tabs('select', 'tab-' + tag);
-              });
-              tags.append(tag_element);
-            });
+						if (presentation.tags) {
+	            var tag_words = presentation.tags.split(' ');
+	            $.each(tag_words, function(index, tag) {
+	              var tag_element = $('<li>' + tag + '</li>').click(function(event) {
+	                $("#tabs").tabs('select', 'tab-' + tag);
+									event.stopPropagation();
+	              });
+	              tags.append(tag_element);
+	            });
+						}
 
             $('.kv-vertical-info', element).append(tags);
           });
@@ -293,7 +296,7 @@
 
     </script>
 
-</div>
+</div></div>
 
 </body>
 </html>

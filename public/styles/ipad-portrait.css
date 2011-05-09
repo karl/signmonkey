@@ -1,4 +1,28 @@
+#page-inner {
+  padding: 0;
+}
+
+#content {
+  float: none;
+  width: 100%;
+}
 
 #tabs {
-  width: 100%;
+  padding: 0 10px;
+}
+
+#player {
+  float: none;
+  width: 768px;
+  min-height: 500px;
+  margin: 0px auto;
+}
+
+#kv-single-widget {
+  padding-top: 10;
+}
+
+.kv-player {
+  border-left: none;
+  border-right: none;
 }
