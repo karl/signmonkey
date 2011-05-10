@@ -121,6 +121,11 @@ h2 {
   border: 1px solid #eee;
 }
 
+#player .kv-title {
+  text-align: center;
+  font-size: 2em;
+}
+
 .ui-tabs.ui-widget-content {
   background: transparent;
 }
