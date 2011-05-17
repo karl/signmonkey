@@ -12,11 +12,6 @@ Signs
 
 start
 finish
-forget
-
-transport
-
-animals
 
 family
 
