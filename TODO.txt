@@ -13,8 +13,6 @@ Signs
 start
 finish
 
-family
-
 emotions
 
 more 101-vocab
