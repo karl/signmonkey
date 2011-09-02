@@ -1,0 +1,167 @@
+<!DOCTYPE>
+<html>
+<head>
+
+  <title>Sign Monkey - BSL Dictionary</title>
+
+  <link rel="stylesheet" href="styles/Aristo/jquery-ui-1.8.7.custom.css">
+
+  <link rel="stylesheet" media="all" href="styles/main.css">
+  <link rel="stylesheet" media="all and (max-device-width: 480px)" href="styles/iphone.css">
+  <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px)" href="styles/ipad.css">
+  <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)" href="styles/ipad-portrait.css">
+  <link rel="stylesheet" media="all and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)" href="styles/ipad-landscape.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="apple-touch-icon"                 href="images/touch-icon-iphone.png" />
+  <link rel="apple-touch-icon" sizes="72x72"   href="images/touch-icon-ipad.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="images/touch-icon-iphone4.png" />
+
+  <link rel="apple-touch-startup-image" href="images/startup.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+  <script src="scripts/jquery.cookie.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+  <script src="http://dev.kuluvalley.com/widgets/1/application.js"></script>
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22202962-1']);
+    _gaq.push(['_setDomainName', 'none']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+</head>
+<body>
+
+<div id="page"><div id="page-inner">
+
+  <div id="header">
+    <h1 id="site-title">Sign Monkey</h1>
+    <div id="tagline">
+      An incomplete, badly signed, low quality<br />
+      video dictionary of British Sign Language.
+    </div>
+
+    <div class="clear" style="height: 1px"></div>
+  </div>
+
+  <script type="text/javascript">
+    var defaultConfig = {
+      type: 'vertical',
+      selector: '#vertical-widget',
+      domain: "signmonkey.kuluvalley.com",
+      playbackWidget: '#kv-playback-widget',
+      sortField: 'title',
+      sortDirection: 'asc',
+      search: true,
+      playIcon: {
+        hide: true
+      },
+      listInfo: [
+        'title',
+        'alternateWords'
+      ],
+      searchFields: [
+        'title',
+        'alternateWords'
+      ]
+    };
+  </script>
+
+  <div id="player">
+    <div id="kv-playback-widget"></div>
+    <script type="text/javascript">
+     KV.playback('#kv-playback-widget', {
+      domain: "signmonkey.kuluvalley.com",
+      guid: "0C297806-AD8A-E094-12F0-A686F09CCCD1"
+    });
+    </script>
+  </div>
+
+  <div id="content">
+
+    <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+      <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+        <% tags.forEach(function(tag) { %>
+          <li class="ui-state-default ui-corner-top <%= tag === currentTag ? 'ui-tabs-selected ui-state-active' : ''%>"><a href="/<%= tag.link %>"><%= tag.title %></a></li>
+        <% }); %>
+      </ul>
+      <div id="vertical-widget" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+        <!-- <%- url %> -->
+        <%- widgetHtml %>
+      </div>
+      <script>
+        var widget = KV.widget($.extend({}, defaultConfig, <%- currentTag.configString %>));
+        
+        if (window.location.search.indexOf('admin') !== -1) {
+          widget.bind('renderPresentation', function(event, element, presentation) {
+            var url = 'http://signmonkey.kuluvalley.com/secure/creator.html?pguid=' + presentation.guid;
+            var manageButton = $('<a target="_blank" href="' + url + '" class="edit-link">edit</a>');
+            manageButton.click(function(event) {
+              window.open(url, 'kvcreator', 'width=1075,height=832');
+              event.preventDefault();
+              event.stopPropagation();
+            });
+        
+            element.append(manageButton);
+          });
+        }
+
+        widget.bind('renderPresentation', function(event, element, presentation) {
+          var tags = $('<ul class="tags"></ul>');
+
+          if (presentation.metadata['Tags']) {
+            var tag_words = presentation.metadata['Tags'].split(' ');
+            $.each(tag_words, function(index, tag) {
+              tags.append($('<li><a href="/' + tag + '">' + tag + '</a></li>'));
+            });
+          }
+        
+          $('.kv-presentation-right .kv-info-inner', element).append(tags);
+        });
+      </script>
+    </div>
+
+  </div>
+
+   <div id="footer">
+     <p>
+       Spotted an error or want to help out? Contact me at <a href="mailto:signmonkey@monket.net">signmonkey@monket.net</a>
+     </p>
+     <p>
+       The videos are shown mirrored (due to being recorded in Photo Booth).
+     </p>
+     <p>
+       Made by <a href="http://monket.net/">Karl O'Keeffe</a>.
+       Videos powered by <a href="http://www.kuluvalley.com/">Kulu Valley</a>.
+       No monkeys were harmed in the making of this website.
+     </p>
+   </div>
+
+
+    <script>
+      $('.kv-vertical-presentation').live('click', function() {
+        var name = $('.kv-vertical-title', this).text();
+        var guid = $(this).attr('guid');
+
+        _gaq.push(['_trackEvent', 'Videos', 'Play', name + " (" + guid + ")"]);
+      });
+
+    </script>
+
+</div></div>
+
+</body>
+</html>

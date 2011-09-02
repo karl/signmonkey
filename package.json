@@ -1,0 +1,9 @@
+{
+    "name": "node-example",
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "2.2.0",
+        "ejs": "0.4.3",
+        "restler": "0.2.1"
+    }
+}

@@ -134,12 +134,12 @@ h2 {
   background: white;
 }
 
-.kv-vertical-info {
+.kv-info {
     font-size: 0.8em;
     color: #888;
 }
 
-.kv-vertical-info .kv-vertical-title {
+.kv-info .kv-info-field-title {
     font-size: 1.3em;
     color: #444;
 }
@@ -163,7 +163,7 @@ h2 {
     font-size: 0.7em;
 }
 
-.kv-vertical-presentation:hover .edit-link {
+.kv-presentation:hover .edit-link {
     display: block;
 }
 
@@ -178,7 +178,7 @@ h2 {
   display: none;
 }
 
-.kv-vertical-presentation:hover .tags {
+.kv-presentation:hover .tags {
   display: block;
 }
 
@@ -195,13 +195,18 @@ h2 {
   border-radius: 5px;
 }
 
+.tags li a {
+  color: #aaa;
+  text-decoration: none;
+}
+
 .tags li:hover {
   background: #dddddd;
 }
 
-
-
-
+#vertical-widget {
+    overflow: scroll;
+}
 
 
 
