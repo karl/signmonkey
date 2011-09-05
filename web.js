@@ -74,7 +74,7 @@ var get_html = function(domain, guid, sortField, sortDirection, size, info_strin
     });
     
     
-    var url = 'http://kelvin.kuluvalley.com/widgets/api/1/clients/' + domain + '/' + guid + '/html/?' + query;
+    var url = 'http://dev.kuluvalley.com/widgets/1/clients/' + domain + '/' + guid + '/html/?' + query;
     sys.puts(url);
     rest.get(url).on('complete', function(data) {
         setTimeout(function() {
