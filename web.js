@@ -1,12 +1,15 @@
-var express = require('express');
 var http = require('http');
 var sys = require('sys');
+var querystring = require('querystring');
+
+var express = require('express');
 var rest = require('restler');
 
 var app = express.createServer(express.logger());
 
-app.get('/:tag?', function(request, response) {
+var create_page = function(request, response) {
     var tagName = request.params.tag;
+    var guid = request.params.guid || '0C297806-AD8A-E094-12F0-A686F09CCCD1';
     
     var currentTag = tags[0];
     
@@ -18,28 +21,37 @@ app.get('/:tag?', function(request, response) {
     
     currentTag.configString = JSON.stringify(currentTag.config);
     
-    var domain = 'signmonkey.kuluvalley.com';
-    var guid = currentTag.config.guid;
-    var sort_field = currentTag.config.sortField || 'title';
-    var sort_direction = currentTag.config.sortDirection || 'asc';
-    var size = currentTag.config.size || 1000;
-    var info_string = 'title,alternateWords';
+    var currentPresentation = {
+        guid: guid
+    }
     
-    var url = 'http://dev.kuluvalley.com/widgets/1/clients/' + domain + '/' + guid + '/html/?size=' + size + '&sortField=' + sort_field + '&sortDirection=' + sort_direction + '&info=' + info_string;
+    var domain = 'signmonkey.kuluvalley.com';
 
-    rest.get(url).on('complete', function(data) {
-        response.render(__dirname + '/public/index.ejs', {
-            layout:false,
-            locals: {
-                currentTag: currentTag,
-                tags: tags,
-                url: url,
-                widgetHtml: data
-            }
+    get_html(domain, currentPresentation.guid, 'title', 'asc', 1, 'title,alternateWords', 'video', function(url, presentationHtml) {
+        currentPresentation.htmlUrl = url;
+        currentPresentation.html = presentationHtml;
+        
+        get_html(domain, currentTag.config.guid, currentTag.config.sortField || 'title', currentTag.config.sortDirection || 'asc', currentTag.config.size || 1000, 'title,alternateWords', '/word-#{guid}', function(url, widgetHtml) {
+            currentTag.htmlUrl = url;
+            currentTag.html = widgetHtml;
+
+            response.render(__dirname + '/public/index.ejs', {
+                layout:false,
+                locals: {
+                    title: currentTag.title,
+                    currentTag: currentTag,
+                    currentPresentation: currentPresentation,
+                    tags: tags
+                }
+            });
         });
     });
     
-});
+};
+
+
+app.get('/word-:guid[0-9a-fA-F-]', create_page);
+app.get('/:tag?', create_page);
 
 app.configure(function(){
     app.use(express.static(__dirname + '/public'));
@@ -50,6 +62,26 @@ app.listen(port, function() {
   console.log("Listening on " + port);
 });
 
+
+var get_html = function(domain, guid, sortField, sortDirection, size, info_string, link, callback) {
+    
+    var query = querystring.stringify({
+        size: size,
+        sortField : sortField,
+        sortDirection: sortDirection,
+        info: info_string,
+        link: link
+    });
+    
+    
+    var url = 'http://kelvin.kuluvalley.com/widgets/api/1/clients/' + domain + '/' + guid + '/html/?' + query;
+    sys.puts(url);
+    rest.get(url).on('complete', function(data) {
+        setTimeout(function() {
+            callback(url, data);
+        }, 0);
+    });
+}
 
 var tags = [ {
         link: '',

@@ -2,7 +2,7 @@
 <html>
 <head>
 
-  <title>Sign Monkey - BSL Dictionary</title>
+  <title><%= title %> - Sign Monkey - BSL Dictionary</title>
 
   <link rel="stylesheet" href="styles/Aristo/jquery-ui-1.8.7.custom.css">
 
@@ -81,11 +81,14 @@
   </script>
 
   <div id="player">
-    <div id="kv-playback-widget"></div>
+    <div id="kv-playback-widget">
+      <!-- <%- currentPresentation.htmlUrl %> -->
+      <%- currentPresentation.html %>
+    </div>
     <script type="text/javascript">
      KV.playback('#kv-playback-widget', {
       domain: "signmonkey.kuluvalley.com",
-      guid: "0C297806-AD8A-E094-12F0-A686F09CCCD1"
+      guid: '<%= currentPresentation.guid %>'
     });
     </script>
   </div>
@@ -99,8 +102,8 @@
         <% }); %>
       </ul>
       <div id="vertical-widget" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
-        <!-- <%- url %> -->
-        <%- widgetHtml %>
+        <!-- <%- currentTag.htmlUrl %> -->
+        <%- currentTag.html %>
       </div>
       <script>
         var widget = KV.widget($.extend({}, defaultConfig, <%- currentTag.configString %>));
