@@ -27,11 +27,11 @@ var create_page = function(request, response) {
     
     var domain = 'signmonkey.kuluvalley.com';
 
-    get_html(domain, currentPresentation.guid, 'title', 'asc', 1, 'title,alternateWords', 'video', function(url, presentationHtml) {
+    get_html(domain, currentPresentation.guid, 'title', 'asc', 1, 'title--alternateWords', 'video', function(url, presentationHtml) {
         currentPresentation.htmlUrl = url;
         currentPresentation.html = presentationHtml;
         
-        get_html(domain, currentTag.config.guid, currentTag.config.sortField || 'title', currentTag.config.sortDirection || 'asc', currentTag.config.size || 1000, 'title,alternateWords', '/word-#{guid}', function(url, widgetHtml) {
+        get_html(domain, currentTag.config.guid, currentTag.config.sortField || 'title', currentTag.config.sortDirection || 'asc', currentTag.config.size || 1000, 'title--alternateWords', '/word-#{guid}', function(url, widgetHtml) {
             currentTag.htmlUrl = url;
             currentTag.html = widgetHtml;
 
@@ -74,7 +74,7 @@ var get_html = function(domain, guid, sortField, sortDirection, size, info_strin
     });
     
     
-    var url = 'http://dev.kuluvalley.com/widgets/1/clients/' + domain + '/' + guid + '/html/?' + query;
+    var url = 'http://widgets.kuluvalley.com/1/clients/' + domain + '/' + guid + '/html/?' + query;
     sys.puts(url);
     rest.get(url).on('complete', function(data) {
         setTimeout(function() {
