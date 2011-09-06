@@ -49,3 +49,7 @@
 .kv-vertical-presentation .tags {
   display: block;
 }
+
+#vertical-widget {
+    height: auto !important;
+}
