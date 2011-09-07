@@ -11,3 +11,15 @@
 .kv-vertical-presentation .tags {
   display: block;
 }
+
+#vertical-widget {
+    height: auto !important;
+}
+
+.kv-presentation:hover .edit-link {
+  display: none;
+}
+
+.kv-presentation:hover .tags {
+  display: none;
+}
