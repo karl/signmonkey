@@ -10,9 +10,6 @@ Code
 Signs
 -----
 
-start
-finish
-
 more 101-vocab
 
 clothes
