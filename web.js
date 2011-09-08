@@ -87,7 +87,7 @@ var tags = [ {
         link: '',
         title: 'Latest',
         config: {
-            guid: "22F7E642-EC19-F60C-6B61-E22ED2124B32",
+            guid: "7497d133-288b-9448-a9b3-6a10ab20af34",
             sortField: 'publishedDate',
             sortDirection: 'desc',
             size: 10
@@ -96,7 +96,7 @@ var tags = [ {
         link: 'all',
         title: 'All',
         config: {
-            guid: "22F7E642-EC19-F60C-6B61-E22ED2124B32"
+            guid: "7497d133-288b-9448-a9b3-6a10ab20af34"
         }
     }, {
         link: 'alphabet',
