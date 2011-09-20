@@ -155,8 +155,8 @@
 
 
     <script>
-      $('.kv-vertical-presentation').live('click', function() {
-        var name = $('.kv-vertical-title', this).text();
+      $('.kv-packshot-holder, .kv-info-field-title').live('click', function() {
+        var name = $('.kv-info-field-title', this).text();
         var guid = $(this).attr('guid');
 
         _gaq.push(['_trackEvent', 'Videos', 'Play', name + " (" + guid + ")"]);
