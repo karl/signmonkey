@@ -163,7 +163,7 @@ h2 {
     font-size: 0.7em;
 }
 
-.kv-presentation:hover .edit-link {
+.kv-kulu:hover .edit-link {
     display: block;
 }
 
@@ -178,7 +178,7 @@ h2 {
   display: none;
 }
 
-.kv-presentation:hover .tags {
+.kv-kulu:hover .tags {
   display: block;
 }
 

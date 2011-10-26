@@ -45,8 +45,8 @@
   border-right: none;
 }
 
-.kv-vertical-presentation .edit-link,
-.kv-vertical-presentation .tags {
+.kv-vertical-kulu .edit-link,
+.kv-vertical-kulu .tags {
   display: block;
 }
 
@@ -54,11 +54,11 @@
     height: auto !important;
 }
 
-.kv-presentation:hover .edit-link {
+.kv-kulu:hover .edit-link {
   display: none;
 }
 
-.kv-presentation:hover .tags {
+.kv-kulu:hover .tags {
   display: none;
 }
 
