@@ -156,8 +156,10 @@
 
     <script>
       $('.kv-packshot-holder, .kv-info-field-title').live('click', function() {
-        var name = $('.kv-info-field-title', this).text();
-        var guid = $(this).attr('guid');
+        var kulu = $(this).parent();
+
+        var name = $('.kv-info-field-title', kulu).text();
+        var guid = kulu.attr('guid');
 
         _gaq.push(['_trackEvent', 'Videos', 'Play', name + " (" + guid + ")"]);
       });
