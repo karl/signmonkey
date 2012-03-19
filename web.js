@@ -81,6 +81,11 @@ var get_html = function(domain, guid, sortField, sortDirection, size, info_strin
             callback(url, data);
         }, 0);
     });
+    rest.get(url).on('error', function(err) {
+        setTimeout(function() {
+            callback(url, '');
+        }, 0);
+    });
 }
 
 var tags = [ {
