@@ -92,7 +92,7 @@ var tags = [ {
         title: 'Latest',
         config: {
             guid: "7497d133-288b-9448-a9b3-6a10ab20af34",
-            sortField: 'publishedDate',
+            sortField: 'published',
             sortDirection: 'desc',
             size: 10
         }
@@ -143,7 +143,7 @@ var tags = [ {
         title: 'Days of the week',
         config: {
     guid: "68303ce0-bb5d-36e2-97e0-80fe89f2abee",
-    sortField: 'publishedDate',
+    sortField: 'published',
     sortDirection: 'desc'
   }
     }, {
@@ -151,7 +151,7 @@ var tags = [ {
         title: 'Months',
         config: {
     guid: "a90e25bb-782c-a2d2-8058-4e4deab5620e",
-    sortField: 'publishedDate',
+    sortField: 'published',
     sortDirection: 'desc'
   }
     }, {
@@ -165,7 +165,7 @@ var tags = [ {
         title: 'Seasons',
         config: {
     guid: "aaf25fd7-0d85-ee13-7b01-66935aab2f02",
-    sortField: 'publishedDate',
+    sortField: 'published',
     sortDirection: 'desc'
   }
     }, {
