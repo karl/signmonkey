@@ -110,7 +110,7 @@
         
         if (window.location.search.indexOf('admin') !== -1) {
           widget.bind('renderPresentation', function(event, element, presentation) {
-            var url = 'http://signmonkey.kuluvalley.com/secure/creator.html?pguid=' + presentation.guid;
+            var url = 'http://signmonkey.kuluvalley.com/create?pguid=' + presentation.guid;
             var manageButton = $('<a target="_blank" href="' + url + '" class="edit-link">edit</a>');
             manageButton.click(function(event) {
               window.open(url, 'kvcreator', 'width=1075,height=832');
