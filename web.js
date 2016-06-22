@@ -10,43 +10,31 @@ var app = express.createServer(express.logger());
 var create_page = function(request, response) {
     var tagName = request.params.tag;
     var guid = request.params.guid || '0C297806-AD8A-E094-12F0-A686F09CCCD1';
-    
+
     var currentTag = tags[0];
-    
+
     tags.forEach(function(tag) {
         if (tag.link === tagName) {
             currentTag = tag;
         }
     });
-    
+
     currentTag.configString = JSON.stringify(currentTag.config);
-    
+
     var currentPresentation = {
         guid: guid
     }
-    
-    var domain = 'signmonkey.kuluvalley.com';
 
-    get_html(domain, currentPresentation.guid, 'title', 'asc', 1, 'title--alternateWords', 'video', function(url, presentationHtml) {
-        currentPresentation.htmlUrl = url;
-        currentPresentation.html = presentationHtml;
-        
-        get_html(domain, currentTag.config.guid, currentTag.config.sortField || 'title', currentTag.config.sortDirection || 'asc', currentTag.config.size || 1000, 'title--alternateWords', '/word-#{guid}', function(url, widgetHtml) {
-            currentTag.htmlUrl = url;
-            currentTag.html = widgetHtml;
-
-            response.render(__dirname + '/public/index.ejs', {
-                layout:false,
-                locals: {
-                    title: currentTag.title,
-                    currentTag: currentTag,
-                    currentPresentation: currentPresentation,
-                    tags: tags
-                }
-            });
-        });
+    response.render(__dirname + '/public/index.ejs', {
+        layout:false,
+        locals: {
+            title: currentTag.title,
+            currentTag: currentTag,
+            currentPresentation: currentPresentation,
+            tags: tags
+        }
     });
-    
+
 };
 
 
@@ -61,31 +49,6 @@ var port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
-
-
-var get_html = function(domain, guid, sortField, sortDirection, size, info_string, link, callback) {
-    
-    var query = querystring.stringify({
-        size: size,
-        sortField : sortField,
-        sortDirection: sortDirection,
-        info: info_string,
-        link: link
-    });
-    
-    
-    var url = 'http://widgets.kuluvalley.com/1/clients/' + domain + '/' + guid + '/html/?' + query;
-    sys.puts(url);
-    rest.get(url).on('complete', function(data) {
-        setTimeout(function() {
-            callback(url, data);
-        }, 0);
-    }).on('error', function(err) {
-        setTimeout(function() {
-            callback(url, '');
-        }, 0);
-    });
-}
 
 var tags = [ {
         link: '',

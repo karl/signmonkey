@@ -208,7 +208,8 @@ h2 {
     overflow: scroll;
 }
 
-
-
-
-
+#banner {
+  background: #ff3344;
+  color: #ffffff;
+  padding: 20px;
+}

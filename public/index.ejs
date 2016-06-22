@@ -45,6 +45,10 @@
 </head>
 <body>
 
+<div id="banner">
+  Videos are temporarily unavailable while we move video hosting!
+</div>
+
 <div id="page"><div id="page-inner">
 
   <div id="header">
@@ -107,7 +111,7 @@
       </div>
       <script>
         var widget = KV.widget($.extend({}, defaultConfig, <%- currentTag.configString %>));
-        
+
         if (window.location.search.indexOf('admin') !== -1) {
           widget.bind('renderPresentation', function(event, element, presentation) {
             var url = 'http://signmonkey.kuluvalley.com/create?pguid=' + presentation.guid;
@@ -117,7 +121,7 @@
               event.preventDefault();
               event.stopPropagation();
             });
-        
+
             element.append(manageButton);
           });
         }
@@ -131,7 +135,7 @@
               tags.append($('<li><a href="/' + tag + '">' + tag + '</a></li>'));
             });
           }
-        
+
           $('.kv-kulu-right .kv-info-inner', element).append(tags);
         });
       </script>
